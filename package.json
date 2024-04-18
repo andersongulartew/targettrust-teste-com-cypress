@@ -1,0 +1,22 @@
+{
+  "name": "targettrust_cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.6",
+    "cypress-multi-reporters": "^1.6.4",
+    "cypress-xpath": "^2.0.1",
+    "mocha-foo-reporter": "^0.0.1",
+    "mocha-junit-reporter": "^2.2.1"
+  }
+}

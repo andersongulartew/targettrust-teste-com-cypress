@@ -1,0 +1,38 @@
+// ***********************************************
+// This example commands.js shows you how to
+// create various custom commands and overwrite
+// existing commands.
+//
+// For more comprehensive examples of custom
+// commands please read more here:
+// https://on.cypress.io/custom-commands
+// ***********************************************
+//
+//
+//-- This is a parent command --
+
+import loc from './locators'
+
+Cypress.Commands.add('login', (environment, username, password) => { 
+    cy.get(loc.LOGIN.TF_WORKSPACE).type(environment)
+    cy.get(loc.LOGIN.TF_USERNAME).type(username)
+    cy.get(loc.LOGIN.TF_PASSWORD).type(password)
+    cy.get(loc.LOGIN.BTN_LOGIN).click()
+})
+
+Cypress.Commands.add('search', (description) => {
+    cy.get(loc.LIST_LOCAL.TF_SEARCH).type(description)
+    cy.get(loc.LIST_LOCAL.BTN_SEARCH).click()
+})
+
+//
+// -- This is a child command --
+// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
+//
+//
+// -- This is a dual command --
+// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
+//
+//
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
